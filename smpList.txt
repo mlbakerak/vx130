@@ -1,0 +1,7 @@
+http://localhost:52463/csp/sys/UtilHome.csp - vista-anc
+http://localhost:52201/csp/sys/UtilHome.csp - shdw-v20
+http://localhost:52771/csp/sys/UtilHome.csp - vx130
+http://localhost:52772/csp/sys/UtilHome.csp - irisfdw
+http://localhost:52773/csp/sys/UtilHome.csp - fdwmirror
+
+https://docs.intersystems.com/ - Intersystems Docs

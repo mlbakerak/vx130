@@ -1,0 +1,73 @@
+version: "3"
+
+services:
+  vistaanc:
+    image: intersystems/iris:2022.1.0.209.0
+    command: --check-caps false
+    container_name: vista-anc
+    hostname: vista-anc
+    environment:
+      ISC_DATA_DIRECTORY: /irissys
+    volumes:
+      - ./anc/db:/irisdb
+      - ./anc/jrn:/irisjrn
+      - ./anc/irissys:/irissys
+    ports:
+      - 19463:1972
+      - 52463:52773
+  shdwv20:
+    image: intersystems/iris:2022.1.0.209.0
+    command: --check-caps false
+    container_name: shdw-v20
+    hostname: shdw-v20
+    environment:
+      ISC_DATA_DIRECTORY: /irissys
+    volumes:
+      - ./v20/db:/irisdb
+      - ./v20/jrn:/irisjrn
+      - ./v20/irissys:/irissys
+    ports:
+      - 19201:1972
+      - 52201:52773
+  vx130:
+    image: intersystems/iris:2022.1.0.209.0
+    command: --check-caps false
+    container_name: vx130
+    hostname: vx130
+    environment:
+      ISC_DATA_DIRECTORY: /irissys
+    volumes:
+      - ./vx130/db:/irisdb
+      - ./vx130/jrn:/irisjrn
+      - ./vx130/irissys:/irissys
+    ports:
+      - 1971:1972
+      - 52771:52773
+  irisfdw:
+    image: intersystems/iris:2022.1.0.209.0
+    command: --check-caps false
+    container_name: irisfdw
+    hostname: irisfdw
+    environment:
+      ISC_DATA_DIRECTORY: /irissys
+    volumes:
+      - ./irisfdw/db:/irisdb
+      - ./irisfdw/jrn:/irisjrn
+      - ./irisfdw/irissys:/irissys
+    ports:
+      - 1972:1972
+      - 52772:52773
+  fdwmirror:
+    image: intersystems/iris:2022.1.0.209.0
+    command: --check-caps false
+    container_name: fdwmirror
+    hostname: fdwmirror
+    environment:
+      ISC_DATA_DIRECTORY: /irissys
+    volumes:
+      - ./fdwmirror/db:/irisdb
+      - ./fdwmirror/jrn:/irisjrn
+      - ./fdwmirror/irissys:/irissys
+    ports:
+      - 1973:1972
+      - 52773:52773
