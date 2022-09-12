@@ -62,10 +62,10 @@ ClassMethod StartJRInBackground(pJRHistoryID As %Integer, pDisplayOutput As %Boo
         set tsc=##class(vx130.JournalReaderHistory).RemoveRecord(pJRHistoryID)
         return tsc
     }
-
     // Loop through JournalFile Records to the end.
-    while $ISOBJECT(tJRec)
+    while ($ISOBJECT(tJRec) & ('tSignaledToStop))
     {
+        set tSignaledToStop=$Case($ListGet(^VX130.JournalReaderStatusD(tInstanceID),2),"R":0,:1)
         set tOffset=tJRec.AddressGet()
         set tJRec=tJRec.NextGet()
     }

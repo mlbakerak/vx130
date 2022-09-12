@@ -133,10 +133,10 @@ ClassMethod CheckEntireFileRead(pJournalFileID As %Integer, pOffset As %Integer)
 	set tLastOffset=tJFile.LastRecord
 	if (pOffset=tLastOffset) 
 	{ 
-		set tFileStatus.EntireFileRead=1 
-		set tsc=tFileStatus.%Save()
+		set tJFileStatus.EntireFileRead=1 
+		set tsc=tJFileStatus.%Save()
 	}
-	kill tFileStatus,tFileClosed,tJFileName,tJFile,tLastOffset
+	kill tJFileStatus,tFileClosed,tJFileName,tJFile,tLastOffset
 	return tsc
 }
 

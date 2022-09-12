@@ -18,6 +18,8 @@ ClassMethod ExportClasses() As %Status
     do:$ISOBJECT(tObj) $SYSTEM.OBJ.Export("vx130Test.GlobalsToWatchTests.cls","/irisdb/tests/vx130Test/GlobalsToWatchTests.xml" )
     set tObj=##class(%Dictionary.CompiledClass).%OpenId("vx130Test.JournalReaderHistoryTests")
     do:$ISOBJECT(tObj) $SYSTEM.OBJ.Export("vx130Test.JournalReaderHistoryTests.cls","/irisdb/tests/vx130Test/JournalReaderHistoryTests.xml" )
+    set tObj=##class(%Dictionary.CompiledClass).%OpenId("vx130Test.JournalFileStatusTests")
+    do:$ISOBJECT(tObj) $SYSTEM.OBJ.Export("vx130Test.JournalFileStatusTests.cls","/irisdb/tests/vx130Test/JournalFileStatusTests.xml" )
     
     kill tObj
     return tsc
