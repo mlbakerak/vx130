@@ -1,4 +1,5 @@
 
+#!/bin/bash
 docker cp iris.key shdw-v20:/irissys/mgr/iris.key
 docker exec -it --user root  shdw-v20 chown 51773:51773 /irissys/mgr/iris.key
 
